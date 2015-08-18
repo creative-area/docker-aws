@@ -23,7 +23,7 @@ creativearea/aws [options] <command> <subcommand> [parameters]
 
 ## Use case
 
-Let's say for example you want to periodicaly backup your MySQL database (running in another Docker container) to an S3 bucket. You could setup a daily cronjob on your host that run the following command:
+Let's say for example you want to periodically backup your MySQL database (running in another Docker container) to an S3 bucket. You could setup a daily cronjob on your host that run the following command:
 
 ```bash
 docker run --rm -i \
@@ -34,5 +34,5 @@ sh -c 'exec mysqldump -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT
 docker run --rm -i \
 -e AWS_ACCESS_KEY_ID=xxxxxxxxxxxx \
 -e AWS_SECRET_ACCESS_KEY=xxxxxxxxxx \
-florentb/awscli s3 cp - s3://tweenpics-mysql-backups/mysql_backup_$(date "+%y%m%d").sql
+creativearea/aws s3 cp - s3://tweenpics-mysql-backups/mysql_backup_$(date "+%y%m%d").sql
 ```
