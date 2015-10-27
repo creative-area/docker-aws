@@ -34,5 +34,5 @@ sh -c 'exec mysqldump -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT
 docker run --rm -i \
 -e AWS_ACCESS_KEY_ID=xxxxxxxxxxxx \
 -e AWS_SECRET_ACCESS_KEY=xxxxxxxxxx \
-creativearea/aws s3 cp - s3://tweenpics-mysql-backups/mysql_backup_$(date "+%y%m%d").sql
+creativearea/aws s3 cp - s3://[aws-bucket-name]/mysql_backup_$(date "+%y%m%d").sql
 ```
